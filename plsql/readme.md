@@ -6,3 +6,6 @@ Learning advanced PL/SQL concepts
 4. [How to define records](4-define-record.sql)
 5. [VARRAY](5-varray.sql)
 6. [Colection methods](6-collection-methods.sql)
+7. [Nested table](7-nested-table.sql)
+8. [Associative array](8-associative-array.sql)
+9. [Multiset operators](9-multiset-operators.sql)
