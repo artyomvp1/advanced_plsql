@@ -5,3 +5,4 @@ Learning advanced PL/SQL concepts
 3. [DML using records](3-dml-using-records.sql)
 4. [How to define records](4-define-record.sql)
 5. [VARRAY](5-varray.sql)
+6. [Colection methods](6-collection-methods.sql)
