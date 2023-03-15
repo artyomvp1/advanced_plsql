@@ -9,3 +9,5 @@ Learning advanced PL/SQL concepts
 7. [Nested table](7-nested-table.sql)
 8. [Associative array](8-associative-array.sql)
 9. [Multiset operators](9-multiset-operators.sql)
+10. [Bulk binding concepts](10-bulk-binding.sql)
+11. [Bulk binding examples](11-bulk-binding-examples.sql)
