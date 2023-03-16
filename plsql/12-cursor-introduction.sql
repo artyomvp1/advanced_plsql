@@ -51,7 +51,7 @@ BEGIN
 END ;
 
 
-/*3. CURSOR FOR LOOP (no open, fetch or close)
+/* 3. CURSOR FOR LOOP (no open, fetch or close)
 Executes for each row until the is no data
 */
 DECLARE
@@ -77,4 +77,35 @@ BEGIN
     LOOP
         DBMS_OUTPUT.PUT_LINE(i.sales_Date) ;
     END LOOP ;
+END ;
+
+
+/* 4. SELECT FOR UPDATE, CURRENT OF
+FOR UPDATE [column] - creates DML lock. If SELECT with FOR UPDATE has been executed, 
+another DML(update, insert, delete) cannot be pefrormed over the locked table, unless 
+the locked table has been commited or rolled back. The second is waiting for commit or rollback.
+(Try to execute FOR UPDATE SELECT on the 1st window and UPDATE in the second).
+
+WHERE CURRENT OF - statement in WHERE clause to change rows ONLY fetched by the cursor.
+*/
+DECLARE
+    v_rec sales%ROWTYPE ;
+    CURSOR v_cur IS
+        SELECT *
+        FROM sales
+        WHERE customer_id = 2 
+        FOR UPDATE ;    -- locking ALL columns of the sales table until commit or rollback
+        
+BEGIN
+    OPEN v_cur ;
+    LOOP
+        FETCH v_cur INTO v_rec ;
+        EXIT WHEN v_cur%NOTFOUND ;
+            UPDATE sales
+            SET tax_amount = 0.1
+            WHERE CURRENT OF v_cur ;    -- change only rows affected by the cursor
+    END LOOP ;
+    
+    COMMIT ;
+    CLOSE v_cur ;
 END ;
