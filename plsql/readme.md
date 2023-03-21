@@ -11,3 +11,4 @@ Learning advanced PL/SQL concepts
 9. [Multiset operators](9-multiset-operators.sql)
 10. [Bulk binding concepts](10-bulk-binding.sql)
 11. [Bulk binding examples](11-bulk-binding-examples.sql)
+12. [Cursors](12-cursor-introduction.sql)
