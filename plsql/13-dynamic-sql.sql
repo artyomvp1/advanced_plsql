@@ -39,3 +39,9 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Total is :' || v_emp) ;
     
 END ;
+
+
+/*
+Note: EXECUTE IMMEDIATE takes only VARCHAR2 as an argument.
+';' are NOT required in dynamic SQL but REQUIRED in dynamic PLSQL
+*/
