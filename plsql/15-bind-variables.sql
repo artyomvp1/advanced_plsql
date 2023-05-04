@@ -18,7 +18,7 @@ BEGIN
 END ;
 
 
--- UPDATE with miltiplebind variables
+-- UPDATE with miltiple bind variables
 DECLARE
     v_sql VARCHAR2(100) ;
 BEGIN
