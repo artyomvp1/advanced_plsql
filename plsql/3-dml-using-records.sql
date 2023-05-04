@@ -1,4 +1,4 @@
--- 1. INSERT
+-- 1. INSERT (вставляем все колонки строки в новую таблицу)
 DECLARE
     v_rec customer%ROWTYPE;
 BEGIN
@@ -14,7 +14,7 @@ BEGIN
 END ;
 
 
--- 2. UPDATE
+-- 2. UPDATE (копируем все колонки строки, меняем значение записи, заменяем всю строку)
 DECLARE
     v_rec customer%ROWTYPE ;
 BEGIN
