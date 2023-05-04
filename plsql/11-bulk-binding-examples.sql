@@ -1,4 +1,4 @@
-/*1. DEFINE category Transfer from SELECT result to collection
+/*1. DEFINE category transfers from SELECT result to collection
 
 BULK COLLECT statement is used in
 - SELECT
@@ -44,7 +44,7 @@ BEGIN
 END ;
 
 
-/*2. In-binding category - from collection variable into a table (reverse of REFINE) using FORALL
+/*2.1. In-binding category - from collection variable into a table (reverse of DEFINE) using FORALL
 FORALL executes one DML statement for each and every row without switching between between PL/SQL and SQL engines.
 - Only 1 DML in 1 FORALL
 - No conditional statement
@@ -73,6 +73,14 @@ BEGIN
         INSERT INTO customer_bkp VALUES v_collection(i) ;
         
 END ;
+
+-- 2.2. Rows affected by FORALL
+/*The SQL%BULK_ROWCOUNT cursor attribute gives granular information about the rows affected by each iteration of 
+the FORALL statement. Every row in the driving collection has a corresponding row in the SQL%BULK_ROWCOUNT cursor attribute.*/
+FOR i IN v_collection.FIRST .. v_collection.LAST 
+LOOP
+    DBMS_OUTPUT.PUT_LINE(v_collection(i) || ' Rows affected: ' || SQL%BULK_ROWCOUNT(i));
+END LOOP ;
 
 
 /* 3. SAVE EXCEPTION - allows FORALL statements to continue even if some of DML statements fail.
