@@ -86,7 +86,7 @@ another DML(update, insert, delete) cannot be pefrormed over the locked table, u
 the locked table has been commited or rolled back. The second is waiting for commit or rollback.
 (Try to execute FOR UPDATE SELECT on the 1st window and UPDATE in the second).
 
-WHERE CURRENT OF - statement in WHERE clause to change rows ONLY fetched by the cursor.
+WHERE CURRENT OF - statement in WHERE clause to change rows ONLY fetched by the (!)STATIC cursor.
 */
 DECLARE
     v_rec sales%ROWTYPE ;
