@@ -2,7 +2,7 @@
 Static SQL - any SQL statement which doesn't change during the runtime and remains fixed
 + We know whether all the object over which we are writing the statement are present or not
 + The statements are hardcoded so we can tune them for optimal performance
-- Lets execute only DML inside PL/SQL block
+- Lets execute only DML inside PL/SQL block, but NOT DDL
 
 Native Dynamic SQL - any statement which is constructed at the runtime. They are built on the fly so then cannot be hardcoded
 + Flexibility 
