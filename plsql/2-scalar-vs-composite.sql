@@ -1,11 +1,12 @@
-/*If we a table contains 100 columns to fetch all the fields using scalar dtype we need 
+/*
+If a table contains 100 columns, in order to fetch all the fields using scalar dtype we need 
 to declare 100 variables, whereas using record we declare only 1 variable
 */
 
 -- Scalar
 DECLARE
-    v_first VARCHAR2(10) ;
-    v_deposit NUMBER ;
+    v_first VARCHAR2(10) ;  -- variable 1
+    v_deposit NUMBER ;      -- variable 2
 BEGIN
     SELECT first_name, deposit
     INTO v_first, v_deposit  -- 1 variable hold 1 value
@@ -17,7 +18,7 @@ END ;
 
 -- Composite
 DECLARE
-    v_rec customer%ROWTYPE ;
+    v_rec customer%ROWTYPE ;  -- variable 1
 BEGIN
     SELECT *
     INTO v_rec  -- record store a WHILE 1 row of a table
