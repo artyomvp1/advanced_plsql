@@ -20,3 +20,6 @@ BEGIN
     -- Access
     DBMS_OUTPUT.PUT_LINE(v_collection('day_1')) ;
 END ;
+
+-- PLS-00657
+Oracle does not support BULK COLLECT for associative array indexed by VARCHAR2 column. Its an implementation restriction.
