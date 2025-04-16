@@ -31,10 +31,6 @@ Profiling with DBMS_PROFILER
 REF Cursors
 Cursor Variables
 
-### Security:
-Definer's Rights vs. Invoker's Rights
-Using DBMS_RLS for Fine-Grained Access Control
-
 Advanced Object Types:
 Object-Oriented PL/SQL
 Inheritance and Polymorphism
